@@ -16,4 +16,4 @@ For help getting started with Flutter development, view the
 samples, guidance on mobile development, and a full API reference.
 
 # Laktiv
-Se yon app kap gen pou ede jere tan, ak priyorite nan tach nou yo.
+Se yon app kap gen pou ede prepare manje nan bay bon jan resèt
