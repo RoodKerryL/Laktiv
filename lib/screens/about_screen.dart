@@ -31,7 +31,7 @@ class AboutScreen extends StatelessWidget {
             const Divider(),
             
             const SizedBox(height: 30),
-            const Text("© 2024 LAKResèt Inc.",
+            const Text("© 2026 LAKResèt Inc.",
               style: TextStyle(color: Colors.grey),
             ),
           ],
