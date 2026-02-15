@@ -1,27 +1,31 @@
 
+
 class Recipes {
-  int id;
-  String tit;
-  List<String> engredyan;
-  List<String> enstriksyon;
-  String image;
+  final int id;
+  final String tit;
+  final List<String> engredyan;
+  final List<String> enstriksyon;
+  final String image;
 
   Recipes({
     required this.id,
     required this.tit,
     required this.engredyan,
     required this.enstriksyon,
-    required this.image,
-
-  });
+    String? image,
+  }) : image = image ?? '';
 
   factory Recipes.fromJson(Map<String, dynamic> el) {
     return Recipes(
-      id: el['id'],
-      tit: el['tit'],
-      engredyan: List<String>.from(el['engredyan']),
-      enstriksyon: List<String>.from(el['enstriksyon']),
-      image: el['image']
+      id: el['id'] ?? 0,
+      tit: (el['name'] ?? '').toString(),
+      engredyan: (el['ingredients'] != null)
+          ? List<String>.from(el['ingredients'].where((e) => e != null).map((e) => e.toString()))
+          : <String>[],
+      enstriksyon: (el['instructions'] != null)
+          ? List<String>.from(el['instructions'].where((e) => e != null).map((e) => e.toString()))
+          : <String>[],
+      image: (el['image'] ?? '').toString(),
     );
 
   }
