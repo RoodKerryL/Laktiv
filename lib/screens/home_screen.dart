@@ -284,14 +284,14 @@ class HomeScreenState extends State<HomeScreen> {
                                           isFavorite ? Icons.favorite : Icons.favorite_border,
                                           color: isFavorite ? Colors.red : null,
                                         ),
-                                        onPressed: () => _toggleFavorite(Recette),
+                                          onPressed: () => _toggleFavorite(Recette),
                                       ),
                                       onTap: () async {
                                         await Navigator.push(
                                           context,
                                           MaterialPageRoute(
                                             builder: (_) => DetailScreen(
-                                              Recette: Recette,
+                                              recette: Recette,
                                               isFromFavorites: false,
                                               onFavoriteChanged: () {
                                                 loadFavoriteIds();
