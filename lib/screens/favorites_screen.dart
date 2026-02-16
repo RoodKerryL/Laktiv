@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lakreset/favorites%20service.dart';
+import 'package:lakreset/favorites_service.dart';
 import 'package:lakreset/models.dart';
 import 'detail_screen.dart';
 
