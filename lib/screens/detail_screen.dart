@@ -3,13 +3,13 @@ import 'package:lakreset/favorites_service.dart';
 import 'package:lakreset/models.dart';
 
 class DetailScreen extends StatefulWidget {
-  final Recettes Recette;
+  final Recettes recette;
   final bool isFromFavorites;
   final VoidCallback? onFavoriteChanged;
 
   const DetailScreen({
     super.key,
-    required this.Recette,
+    required this.recette,
     this.isFromFavorites = false,
     this.onFavoriteChanged,
   });
@@ -28,7 +28,7 @@ class _DetailScreenState extends State<DetailScreen> {
   }
 
   Future<void> _checkFavoriteStatus() async {
-    final favorite = await FavoritesService.isFavorite(widget.Recette.id);
+    final favorite = await FavoritesService.isFavorite(widget.recette.id);
     
     if (mounted) {
       setState(() {
@@ -38,7 +38,7 @@ class _DetailScreenState extends State<DetailScreen> {
   }
 
   Future<void> _toggleFavorite() async {
-    final wasToggled = await FavoritesService.toggleFavorite(widget.Recette);
+    final wasToggled = await FavoritesService.toggleFavorite(widget.recette);
     
     if (!wasToggled) return;
 
@@ -53,8 +53,8 @@ class _DetailScreenState extends State<DetailScreen> {
         SnackBar(
           content: Text(
             isFavorite 
-                ? '${widget.Recette.name} ajoute nan favori'
-                : '${widget.Recette.name} retire nan favori'
+                ? '${widget.recette.name} ajoute nan favori'
+                : '${widget.recette.name} retire nan favori'
           ),
           duration: const Duration(seconds: 2),
         ),
@@ -70,7 +70,11 @@ class _DetailScreenState extends State<DetailScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.Recette.name),
+        title: Text(
+          widget.recette.name,
+          style: const TextStyle(color: Colors.white),
+        
+        ),
         backgroundColor: Colors.orange[800],
         actions: [
           IconButton(
@@ -89,7 +93,7 @@ class _DetailScreenState extends State<DetailScreen> {
             Stack(
               children: [
                 Image.network(
-                  widget.Recette.image,
+                  widget.recette.image,
                   width: double.infinity,
                   height: 250,
                   fit: BoxFit.cover,
@@ -120,7 +124,7 @@ class _DetailScreenState extends State<DetailScreen> {
                   left: 20,
                   right: 20,
                   child: Text(
-                    widget.Recette.name,
+                    widget.recette.name,
                     style: const TextStyle(
                       color: Colors.white,
                       fontSize: 26,
@@ -148,7 +152,7 @@ class _DetailScreenState extends State<DetailScreen> {
 
                   const SizedBox(height: 10),
 
-                  if (widget.Recette.ingredients.isEmpty)
+                  if (widget.recette.ingredients.isEmpty)
                     const Padding(
                       padding: EdgeInsets.symmetric(vertical: 8.0),
                       child: Text(
@@ -161,7 +165,7 @@ class _DetailScreenState extends State<DetailScreen> {
                       ),
                     )
                   else
-                    ...widget.Recette.ingredients.map((ingredient) {
+                    ...widget.recette.ingredients.map((ingredient) {
                       return Padding(
                         padding: const EdgeInsets.symmetric(vertical: 4.0),
                         child: Row(
@@ -200,7 +204,7 @@ class _DetailScreenState extends State<DetailScreen> {
 
                   const SizedBox(height: 10),
 
-                  if (widget.Recette.instructions.isEmpty)
+                  if (widget.recette.instructions.isEmpty)
                     const Padding(
                       padding: EdgeInsets.symmetric(vertical: 8.0),
                       child: Text(
@@ -213,7 +217,7 @@ class _DetailScreenState extends State<DetailScreen> {
                       ),
                     )
                   else
-                    ...widget.Recette.instructions.asMap().entries.map((entry) {
+                    ...widget.recette.instructions.asMap().entries.map((entry) {
                       int index = entry.key;
                       String instruction = entry.value;
                       

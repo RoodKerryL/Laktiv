@@ -105,7 +105,7 @@ class FavoritesScreenState extends State<FavoritesScreen> {
                               context,
                               MaterialPageRoute(
                                 builder: (_) => DetailScreen(
-                                  Recette: Recette,
+                                  recette: Recette,
                                   isFromFavorites: true,
                                   onFavoriteChanged: () {
                                     loadFavorites();

@@ -101,7 +101,7 @@ class _AppNavigationState extends State<AppNavigation> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.info),
-            label: 'A propos',
+            label: 'Apwopo',
           ),
         ],
       ),
