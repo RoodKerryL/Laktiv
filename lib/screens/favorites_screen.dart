@@ -60,8 +60,7 @@ class FavoritesScreenState extends State<FavoritesScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          "Favori",
+        title: const Text("Favori",
           style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
         ),
         centerTitle: false,
@@ -77,13 +76,11 @@ class FavoritesScreenState extends State<FavoritesScreen> {
                     children: [
                       Icon(Icons.favorite_border, size: 80, color: Colors.grey[400]),
                       const SizedBox(height: 16),
-                      Text(
-                        'Pa gen favori ankò',
+                      Text('Poko gen favori',
                         style: TextStyle(fontSize: 18, color: Colors.grey[600]),
                       ),
                       const SizedBox(height: 8),
-                      Text(
-                        'Ajoute kèk resèt nan favori ou!',
+                      Text('Ajoute kèk resèt nan favori ou!',
                         style: TextStyle(fontSize: 14, color: Colors.grey[500]),
                       ),
                     ],

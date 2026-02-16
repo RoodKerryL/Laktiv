@@ -42,8 +42,7 @@ class _SplashScreenState extends State<SplashScreen> {
               ),
             ),
             const SizedBox(height: 20),
-            const Text(
-              "LAKResèt",
+            const Text("LAKResèt",
               style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
