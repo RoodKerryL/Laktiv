@@ -23,7 +23,7 @@ class AboutScreen extends StatelessWidget {
               style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 10),
-            const Text("LAKResèt se yon aplikasyon ki fèt pou ede w dekouvri pi bèl resèt manje ayisyen ak entènasyonal. Objektif nou se fè kizin lan vin pi fasil ak pi gou pou tout moun.",
+            const Text("LAKResèt se yon aplikasyon ki fèt pou ede w dekouvri pi bèl resèt manje. Objektif nou se fè kizin lan vin pi fasil ak pi gou pou tout moun.",
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 16, color: Colors.black87),
             ),
